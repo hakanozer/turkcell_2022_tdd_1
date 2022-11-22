@@ -22,6 +22,7 @@ public class CustomerService {
 
     public ResponseEntity add( Customer customer ) {
         customerRepository.save(customer);
+        System.out.println("service add Call");
         return new ResponseEntity(customer, HttpStatus.OK);
     }
 

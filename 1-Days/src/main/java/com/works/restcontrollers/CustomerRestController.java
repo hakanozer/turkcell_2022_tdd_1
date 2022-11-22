@@ -22,6 +22,7 @@ public class CustomerRestController {
 
     @PostMapping("/add")
     public ResponseEntity add( @RequestBody Customer customer) {
+        System.out.println("add Call");
         return customerService.add(customer);
     }
 

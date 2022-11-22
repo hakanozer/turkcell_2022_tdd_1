@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -35,7 +36,7 @@ public class CustomerRestMockTest {
 
         Customer customer = new Customer();
         customer.setEmail("kaan@mail.com");
-        customer.setName("Kaan Bilsin");
+        customer.setName("ali");
         String stCustomer = objectMapper.writeValueAsString(customer);
 
        mockMvc.perform(
@@ -54,7 +55,9 @@ public class CustomerRestMockTest {
         ).andReturn();
 
        int status = mvcResult.getResponse().getStatus();
-        Assertions.assertEquals(200, status);
+       String data = mvcResult.getResponse().getContentAsString();
+       System.out.println(data);
+       Assertions.assertEquals(200, status);
 
     }
 

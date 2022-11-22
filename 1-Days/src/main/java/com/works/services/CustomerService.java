@@ -23,6 +23,9 @@ public class CustomerService {
     public ResponseEntity add( Customer customer ) {
         customerRepository.save(customer);
         System.out.println("service add Call");
+        if ( customer.getName().equals("ali") ) {
+            return new ResponseEntity("", HttpStatus.BAD_REQUEST);
+        }
         return new ResponseEntity(customer, HttpStatus.OK);
     }
 

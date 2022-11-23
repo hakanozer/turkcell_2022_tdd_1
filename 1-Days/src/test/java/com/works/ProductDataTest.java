@@ -15,7 +15,6 @@ public class ProductDataTest {
     @Autowired
     ProductRepository productRepository;
 
-
     @Test
     @Sql(scripts = "classpath:productData.sql")
     public void listTest() {

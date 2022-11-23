@@ -1,4 +1,4 @@
-package com.works.confgis;
+package com.works.configs;
 
 import org.springframework.context.annotation.Configuration;
 
